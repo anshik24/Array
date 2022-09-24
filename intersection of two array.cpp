@@ -7,12 +7,11 @@ class Solution {
    for(int i=0;i<n;i++){
        s.insert(a[i]);
    }
-   int ans=0;
+   unordered_set<int>s1;
    for(int i=0;i<m;i++){
-       if(s.find(b[i])!=s.end()){
-           ans++;
+       if(s.count(b[i])){
+           s1.insert(b[i]);
        }
    }
-    return ans;
+    return s1.size();
     }
-};

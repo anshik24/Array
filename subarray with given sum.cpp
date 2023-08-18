@@ -27,6 +27,28 @@ class Solution
         
     }
 };
+ vector<int> subarraySum(vector<int>arr, int n, long long s)
+    {
+        // Your code here
+      
+      if(s==0)
+      return {-1};
+      long long sum=0,l=0,r=0;
+      while(r<n){
+          if(sum+arr[r]<=s){
+              sum+=arr[r++];
+          }
+          else{
+          sum-=arr[l++];
+      }
+      if(sum==s){
+          return{l+1,r};
+      }
+    }
+    return {-1};
+      
+    }
+};
 
 // { Driver Code Starts.
 
